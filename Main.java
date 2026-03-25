@@ -1,8 +1,17 @@
+import util.Theme;
 import view.LoginGUI;
 
-public class Main {
+import javax.swing.*;
 
+public class Main {
     public static void main(String[] args) {
-        new LoginGUI();
+        // Apply global UI settings
+        System.setProperty("awt.useSystemAAFontSettings", "on");
+        System.setProperty("swing.aatext", "true");
+
+        SwingUtilities.invokeLater(() -> {
+            Theme.applyGlobals();
+            new LoginGUI();
+        });
     }
 }
